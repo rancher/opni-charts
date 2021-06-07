@@ -1,0 +1,4 @@
+packageVersion: 0
+url: https://github.com/opendistro-for-elasticsearch/opendistro-build.git
+subdirectory: helm/opendistro-es
+commit: 54e00993ce14c95578a207f518db3d47251541e9 # v1.13.2
