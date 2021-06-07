@@ -1,0 +1,21 @@
+apiVersion: v1
+entries:
+  opendistro-es:
+  - apiVersion: v1
+    appVersion: 1.13.2
+    created: "2021-06-07T15:56:13.980762147-04:00"
+    description: Open Distro for Elasticsearch
+    digest: c8d2f02a2f39f1f372295913206d986857aa058ac61acde14ff85efb7e2a6bbc
+    kubeVersion: ^1.10.0-0
+    maintainers:
+    - email: derek.heldt-werle@viasat.com
+      name: Derek Heldt-Werle
+    - email: kalvin.chau@viasat.com
+      name: Kalvin Chau
+    name: opendistro-es
+    sources:
+    - https://pages.git.viasat.com/ATG/charts
+    urls:
+    - assets/opendistro-es/opendistro-es-1.13.2.tgz
+    version: 1.13.2
+generated: "2021-06-07T15:56:13.979094275-04:00"
