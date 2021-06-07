@@ -1,0 +1,7 @@
+template: staging
+
+validate:
+  - url: https://github.com/rancher/opni-charts.git
+    branch: staging
+helmRepo:
+  cname: charts.opni.io
