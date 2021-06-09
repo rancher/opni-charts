@@ -20,10 +20,22 @@ data:
         Path              {{ .Values.systemdLogPath | default "/var/log/journal" }}
         Systemd_Filter    _SYSTEMD_UNIT=k3s.service
 
+    [FILTER]
+        Name lua
+        Match *
+        script received_at.lua
+        call append
+
     [OUTPUT]
         Name              forward
         Match             *
         Host              {{ .Release.Name }}-fluentd.{{ .Release.Namespace }}.svc
         Port              24240
         Retry_Limit       False
+  received_at.lua: |
+    function append(tag, timestamp, record)
+      new_record = record
+      new_record["timestamp"] = os.date("!%Y-%m-%dT%TZ",t)
+      return 1, timestamp, new_record
+    end
 {{- end }}

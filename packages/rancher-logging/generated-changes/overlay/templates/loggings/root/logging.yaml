@@ -102,6 +102,10 @@ spec:
         seLinuxOptions:
           type: rke_logreader_t
     {{- end }}
+    {{- if (or .Values.additionalLoggingSources.rke2.enabled .Values.additionalLoggingSources.k3s.enabled) }}
+    filterKubernetes:
+      Kube_URL: https://kubernetes.default:443
+    {{- end }}
     {{- if .Values.global.dockerRootDirectory }}
     mountPath: {{ $containers }}
     extraVolumeMounts:
