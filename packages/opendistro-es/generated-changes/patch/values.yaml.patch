@@ -1,0 +1,28 @@
+--- charts-original/values.yaml
++++ charts/values.yaml
+@@ -28,8 +28,23 @@
+   #  requests:
+   #    cpu: 500m
+   #    memory: 512Mi
+-  readinessProbe: []
+-  livenessProbe: []
++  readinessProbe:
++    httpGet:
++      path: /api/status
++      port: 5601
++    periodSeconds: 30
++    initialDelaySeconds: 60
++    failureThreshold: 3
++    successThreshold: 1
++    timeoutSeconds: 10
++  livenessProbe:
++    tcpSocket:
++      port: 5601
++    periodSeconds: 10
++    initialDelaySeconds: 60
++    failureThreshold: 3
++    successThreshold: 1
++    timeoutSeconds: 1
+   startupProbe: []
+ 
+   elasticsearchAccount:
