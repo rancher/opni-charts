@@ -1,0 +1,36 @@
+distribution: ""
+
+elastic:
+  enabled: true
+  kibana:
+    serviceType: NodePort
+
+rancherLogging:
+  enabled: true
+
+helmController:
+  enabled: true
+
+nvidiaPlugin:
+  enabled: false
+  version: 1.0.0-beta6
+
+gpuServices:
+  enabled: false
+
+nats:
+  replicas: 3
+  version: 2.2.1
+
+nulog:
+  cpuRequest: 1
+  trainImage: ""
+
+image:
+  repository: rancher/opni-manager
+  tag: latest
+  pullPolicy: IfNotPresent
+
+global:
+  cattle:
+    systemDefaultRegistry: ""

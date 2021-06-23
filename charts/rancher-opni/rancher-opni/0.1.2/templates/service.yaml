@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+{{ include "rancher-opni.labels" . | indent 4}}
+  name: {{ include "rancher-opni.fullname" . }}-metrics
+  namespace: {{ .Release.Namespace }}
+spec:
+  ports:
+  - name: https
+    port: 8443
+    targetPort: https
+  selector:
+    app.kubernetes.io/name: {{ include "rancher-opni.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}

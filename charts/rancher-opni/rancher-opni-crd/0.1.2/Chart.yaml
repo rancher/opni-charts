@@ -1,0 +1,9 @@
+annotations:
+  catalog.cattle.io/hidden: "true"
+  catalog.cattle.io/namespace: opni-system
+  catalog.cattle.io/release-name: rancher-opni-crd
+apiVersion: v1
+description: Installs the CRDs for rancher-opni.
+name: rancher-opni-crd
+type: application
+version: 0.1.2
