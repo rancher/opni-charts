@@ -141,17 +141,16 @@ entries:
     version: 0.1.2
   rancher-opni-crd:
   - annotations:
-      catalog.cattle.io/certified: rancher
       catalog.cattle.io/hidden: "true"
-      catalog.cattle.io/namespace: cattle-logging-system
-      catalog.cattle.io/release-name: rancher-logging-crd
+      catalog.cattle.io/namespace: opni-system
+      catalog.cattle.io/release-name: rancher-opni-crd
     apiVersion: v1
-    created: "2021-06-09T12:37:53.9847257+12:00"
-    description: Installs the CRDs for rancher-logging.
-    digest: d2309d28b3d7b5468902403a757c0fe81913089fb7706ef49cfd01f85efa3e39
-    name: rancher-logging-crd
+    created: "2021-06-23T15:35:37.121996+12:00"
+    description: Installs the CRDs for rancher-opni.
+    digest: 370fe8a0d85ba346b68cf4318cdb0ba64de7305c7f1a072acdafc84266b4e827
+    name: rancher-opni-crd
     type: application
     urls:
-    - assets/rancher-logging/rancher-logging-crd-3.9.401+up3.10.0.tgz
-    version: 3.9.401+up3.10.0
+    - assets/rancher-opni/rancher-opni-crd-0.1.2.tgz
+    version: 0.1.2
 generated: "2021-06-07T15:56:13.979094275-04:00"
