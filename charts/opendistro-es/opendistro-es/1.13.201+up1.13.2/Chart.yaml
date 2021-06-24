@@ -1,3 +1,5 @@
+annotations:
+  catalog.cattle.io/hidden: "true"
 apiVersion: v1
 appVersion: 1.13.2
 description: Open Distro for Elasticsearch
