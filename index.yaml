@@ -25,11 +25,11 @@ entries:
       catalog.cattle.io/auto-install: rancher-logging-crd=match
       catalog.cattle.io/certified: rancher
       catalog.cattle.io/display-name: Logging
+      catalog.cattle.io/hidden: "true"
       catalog.cattle.io/namespace: cattle-logging-system
       catalog.cattle.io/provides-gvr: logging.banzaicloud.io.clusterflow/v1beta1
       catalog.cattle.io/release-name: rancher-logging
       catalog.cattle.io/ui-component: logging
-      catalog.cattle.io/hidden: "true"
     apiVersion: v1
     appVersion: 3.10.0
     created: "2021-06-11T08:14:29.5732157+12:00"
@@ -60,6 +60,26 @@ entries:
     urls:
     - assets/rancher-logging/rancher-logging-crd-3.10.0.tgz
     version: 3.10.0
+  rancher-opni:
+  - annotations:
+      catalog.cattle.io/auto-install: rancher-opni-crd=match
+      catalog.cattle.io/experimental: "true"
+      catalog.cattle.io/os: linux
+      catalog.cattle.io/requests-cpu: "2"
+      catalog.cattle.io/requests-memory: 8Gi
+      catalog.rancher.io/namespace: opni-system
+      catalog.rancher.io/release-name: rancher-opni
+    apiVersion: v1
+    appVersion: 0.1.2
+    created: "2021-06-23T15:35:37.1217498+12:00"
+    description: Installs the opni system with a quickstart configuration
+    digest: b0b4bbef9bf0dd69cf16269fd367bc7d3113f3239b417075524edd8fd9ca451a
+    name: rancher-opni
+    type: application
+    urls:
+    - assets/rancher-opni/rancher-opni-0.1.2.tgz
+    version: 0.1.2
+  rancher-opni-crd:
   - annotations:
       catalog.cattle.io/hidden: "true"
       catalog.cattle.io/namespace: opni-system
