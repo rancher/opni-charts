@@ -1,8 +1,8 @@
 annotations:
-  catalog.cattle.io/auto-install: rancher-opni-crds=match
+  catalog.cattle.io/auto-install: rancher-opni-crd=match
   catalog.cattle.io/experimental: "true"
   catalog.cattle.io/os: linux
-  catalog.cattle.io/requests-cpu: "4"
+  catalog.cattle.io/requests-cpu: "2"
   catalog.cattle.io/requests-memory: 8Gi
   catalog.rancher.io/namespace: opni-system
   catalog.rancher.io/release-name: rancher-opni
