@@ -52,3 +52,6 @@ spec:
   nulogServiceCpuRequest: {{ .Values.nulog.cpuRequest | quote }}
   nulogTrainImage: {{ .Values.nulog.trainImage | quote }}
   nvidiaVersion: {{ .Values.nvidiaPlugin.version }}
+  {{- if (not .Values.rancherLogging.enabled) }}
+  loggingCrdNamespace: {{ required "If installation of Rancher Logging is disabled please provide the namespace where it is already installed" .Values.rancherLogging.namespace }}
+  {{- end }}
