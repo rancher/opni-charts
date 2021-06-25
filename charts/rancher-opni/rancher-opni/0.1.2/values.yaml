@@ -27,9 +27,9 @@ nulog:
   trainImage: ""
 
 image:
+  pullPolicy: IfNotPresent
   repository: rancher/opni-manager
   tag: latest
-  pullPolicy: IfNotPresent
 
 global:
   cattle:
