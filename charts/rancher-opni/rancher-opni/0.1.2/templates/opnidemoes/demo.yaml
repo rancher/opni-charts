@@ -1,0 +1,54 @@
+apiVersion: demo.opni.io/v1alpha1
+kind: OpniDemo
+metadata:
+  name: {{ template "rancher-opni.name" . }}-quickstart
+  namespace: {{ .Release.Namespace }}
+  labels:
+{{ include "rancher-opni.labels" . | indent 4 }}
+spec:
+  components:
+    infra:
+      deployHelmController: {{ .Values.helmController.enabled }}
+      deployNvidiaPlugin:   {{ .Values.nvidiaPlugin.enabled }}
+    opni:
+    {{- if .Values.elastic.enabled }}
+      elastic:
+        enabled: {{ .Values.elastic.enabled }}
+        set:
+          kibana.service.type: {{ .Values.elastic.kibana.serviceType }}
+    {{- end }}
+    {{- if .Values.gpuServices.enabled }}
+    {{- if (not .Values.nvidiaPlugin.enabled ) }}{{- required "Nvidia plugin needs to be enabled for GPU services" ""}}{{- end }}
+      deployGpuServices: true
+    {{- end }}
+      minio:
+        enabled: true
+      nats:
+        enabled: true
+    {{- if .Values.rancherLogging.enabled }}
+      rancherLogging:
+        enabled: true
+        set:
+        {{- if (eq .Values.distribution "rke2") }}
+          additionalLoggingSources.rke2.enabled: "true"
+        {{- end }}
+        {{- if (eq .Values.distribution "k3s") }}
+          additionalLoggingSources.k3s.enabled: "true"
+          systemdLogPath: "/var/log/journal"
+        {{- end }}
+        {{- if (eq .Values.distribution "rke") }}
+          additionalLoggingSources.rke.enabled: "true"
+        {{- end }}
+    {{- end }}
+  elasticsearchPassword: admin
+  elasticsearchUser: admin
+  minioAccessKey: minioadmin
+  minioSecretKey: minioadmin
+  minioVersion: 8.0.10
+  natsMaxPayload: 10485760
+  natsPassword: password
+  natsReplicas: {{ .Values.nats.replicas }}
+  natsVersion: {{ .Values.nats.version }}
+  nulogServiceCpuRequest: {{ .Values.nulog.cpuRequest | quote }}
+  nulogTrainImage: {{ .Values.nulog.trainImage | quote }}
+  nvidiaVersion: {{ .Values.nvidiaPlugin.version }}

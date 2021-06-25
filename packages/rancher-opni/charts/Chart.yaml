@@ -1,0 +1,17 @@
+apiVersion: v2
+version: 0.1.2
+appVersion: 0.1.2
+annotations:
+  catalog.rancher.io/namespace: opni-system
+  catalog.rancher.io/release-name: rancher-opni
+  catalog.cattle.io/os: linux
+  catalog.cattle.io/auto-install: rancher-opni-crd=match
+  catalog.cattle.io/requests-cpu: "2"
+  catalog.cattle.io/requests-memory: "8Gi"
+  catalog.cattle.io/experimental: "true"
+description: Installs the opni system with a quickstart configuration
+name: rancher-opni
+type: application
+keywords:
+- logging
+- monitoring
