@@ -20,46 +20,6 @@ entries:
     urls:
     - assets/opendistro-es/opendistro-es-1.13.201+up1.13.2.tgz
     version: 1.13.201+up1.13.2
-  rancher-logging:
-  - annotations:
-      catalog.cattle.io/auto-install: rancher-logging-crd=match
-      catalog.cattle.io/certified: rancher
-      catalog.cattle.io/display-name: Logging
-      catalog.cattle.io/hidden: "true"
-      catalog.cattle.io/namespace: cattle-logging-system
-      catalog.cattle.io/provides-gvr: logging.banzaicloud.io.clusterflow/v1beta1
-      catalog.cattle.io/release-name: rancher-logging
-      catalog.cattle.io/ui-component: logging
-    apiVersion: v1
-    appVersion: 3.10.0
-    created: "2021-06-11T08:14:29.5732157+12:00"
-    description: Collects and filter logs using highly configurable CRDs. Powered
-      by Banzai Cloud Logging Operator.
-    digest: c2a64489d0629d4a91e0c53764a23b69b468863bd117c0baf486ca33e1fad866
-    icon: https://charts.rancher.io/assets/logos/logging.svg
-    keywords:
-    - logging
-    - monitoring
-    - security
-    name: rancher-logging
-    urls:
-    - assets/rancher-logging/rancher-logging-3.10.0.tgz
-    version: 3.10.0
-  rancher-logging-crd:
-  - annotations:
-      catalog.cattle.io/certified: rancher
-      catalog.cattle.io/hidden: "true"
-      catalog.cattle.io/namespace: cattle-logging-system
-      catalog.cattle.io/release-name: rancher-logging-crd
-    apiVersion: v1
-    created: "2021-06-11T08:14:29.5775621+12:00"
-    description: Installs the CRDs for rancher-logging.
-    digest: c3efd05554e898d8d9d2f96dc8c8fd3b63c97d9559969171392cf048698cdbbc
-    name: rancher-logging-crd
-    type: application
-    urls:
-    - assets/rancher-logging/rancher-logging-crd-3.10.0.tgz
-    version: 3.10.0
   rancher-opni:
   - annotations:
       catalog.cattle.io/auto-install: rancher-opni-crd=match
